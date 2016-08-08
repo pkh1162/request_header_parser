@@ -13,6 +13,6 @@ app.get("/app/whoami", function(req, res){
     res.end();
 })
 
-app.listen(8080, function(){
+app.listen(process.env.PORT || 8080, function(){
     console.log("I'm listening.");
 })
