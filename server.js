@@ -1,8 +1,13 @@
 var express = require("express");
 
 var app = express();
+app.set("view engine", "pug");
 
-app.get("/app/whoami", function(req, res){
+app.get("/", function(req, res){
+    res.render("index");
+})
+
+app.get("/whoami", function(req, res){
     var whoami = {
         ipaddress : req.ip,
         language : req.headers["accept-language"],
